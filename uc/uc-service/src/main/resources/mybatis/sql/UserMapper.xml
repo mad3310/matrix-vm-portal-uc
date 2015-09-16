@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.letvcloud.uc.mapper.UserMapper">
+
+    <resultMap id="userResultMap" type="user">
+    </resultMap>
+
+
+    <sql id="getUser">
+        SELECT
+        id,
+        parentId,
+        emailStatus,
+        examineStatus,
+        userStatus,
+        mobileStatus,
+        userAvatar,
+        userUnique,
+        idCard,
+        idCardPhoto,
+        email,
+        PASSWORD,
+        CountryCode,
+        mobile,
+        userKey,
+        userType,
+        areaLevel1,
+        areaLevel2,
+        areaLevel3,
+        address,
+        enterpriseName,
+        organizationCode,
+        contacts,
+        siteName,
+        siteType,
+        siteDomain,
+        businessLicense,
+        businessLicenseRegisterNum,
+        createdTime,
+        createdUser,
+        lastUpdateTime,
+        lastUpdateUser,
+        reasonId,
+        reason,
+        isOld
+      FROM
+        uc_user_info
+    </sql>
+
+
+    <select id="getUserById" resultMap="userResultMap">
+        <include refid="getUser"/>
+        WHERE id = #{id}
+    </select>
+    <select id="getUserByUnique" resultMap="userResultMap">
+        <include refid="getUser"/>
+        WHERE userUnique = #{userUnique}
+    </select>
+
+    <select id="getUserByEmail" resultMap="userResultMap">
+        <include refid="getUser"/>
+        WHERE
+        email = #{email}
+    </select>
+
+    <select id="getUserByMobile" resultMap="userResultMap">
+        <include refid="getUser"/>
+        WHERE
+        mobile = #{mobile} and
+        countryCode = #{areaInput}
+    </select>
+
+
+    <insert id="savePersonalUser" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO uc_user_info
+        (
+          id,
+          email,
+          password,
+          userType,
+          userStatus,
+          userUnique,
+          userKey,
+          contacts,
+          countryCode,
+          mobile,
+          mobileStatus,
+          siteType,
+          siteName,
+          siteDomain,
+          createdTime,
+          lastUpdateTime
+        )
+        VALUES
+        (#{id},
+         #{email},
+         #{password},
+         #{userType},
+         #{userStatus},
+         #{userUnique},
+         #{userKey},
+         #{contacts},
+         #{countryCode},
+         #{mobile},
+         1,
+         #{siteType},
+         #{siteName},
+         #{siteDomain},
+         now(),
+         now()
+        )
+  </insert>
+
+
+    <insert id="saveEnterpriseUser" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO uc_user_info
+        (
+          id,
+          email,
+          password,
+          userType,
+          userStatus,
+          userUnique,
+          userKey,
+          contacts,
+          countryCode,
+          mobile,
+          mobileStatus,
+          enterpriseName,
+          siteType,
+          siteName,
+          siteDomain,
+          createdTime,
+          lastUpdateTime
+        )
+        VALUES
+        (#{id},
+          #{email},
+         #{password},
+         #{userType},
+         #{userStatus},
+         #{userUnique},
+         #{userKey},
+         #{contacts},
+         #{countryCode},
+         #{mobile},
+         1,
+         #{enterpriseName},
+         #{siteType},
+         #{siteName},
+         #{siteDomain},
+        now(),
+        now()
+        )
+  </insert>
+
+    <update id="modifyQualificationsAuthen" >
+        UPDATE
+          uc_user_info
+        SET
+          examineStatus=#{examineStatus}
+        WHERE
+        id=#{id}
+    </update>
+
+    <update id="modifyEnterPriseUserById" parameterType="com.letvcloud.uc.dao.dto.UserDto">
+        UPDATE
+            uc_user_info
+        SET
+         	<if test="userDto.contacts != null"> contacts = #{userDto.contacts},</if>
+            <if test="userDto.enterpriseName != null"> enterpriseName = #{userDto.enterpriseName},</if>
+          	<if test="userDto.siteType != null"> siteType = #{userDto.siteType},</if>
+       	 	<if test="userDto.siteName != null"> siteName = #{userDto.siteName},</if>
+           	<if test="userDto.siteDomain != null"> siteDomain = #{userDto.siteDomain}</if>
+        WHERE
+            id = #{id}
+    </update>
+
+    <update id="modifyProxyUserById" parameterType="com.letvcloud.uc.dao.dto.UserDto">
+        UPDATE
+        uc_user_info
+        SET
+        <if test="userDto.contacts != null"> contacts = #{userDto.contacts},</if>
+        <if test="userDto.enterpriseName != null"> enterpriseName = #{userDto.enterpriseName},</if>
+        <if test="userDto.siteType != null"> siteType = #{userDto.siteType},</if>
+        <if test="userDto.siteName != null"> siteName = #{userDto.siteName},</if>
+        <if test="userDto.siteDomain != null"> siteDomain = #{userDto.siteDomain},</if>
+        <if test="userDto.mobile != null"> mobile = #{userDto.mobile}</if>
+        WHERE
+        id = #{id}
+    </update>
+
+    <update id="modifyPersonalUserById">
+        UPDATE
+            uc_user_info
+        SET
+            contacts = #{userDto.contacts},
+            siteType = #{userDto.siteType},
+            siteName = #{userDto.siteName},
+            siteDomain = #{userDto.siteDomain}
+        WHERE
+            id = #{id}
+    </update>
+
+    <update id="modifyPasswordById">
+        UPDATE
+            uc_user_info
+        SET
+            password = #{password}
+        WHERE
+            id = #{id}
+    </update>
+
+    <update id="modifyMobileById">
+        UPDATE
+            uc_user_info
+        SET
+            mobile = #{mobile},
+            CountryCode = #{countryCode},
+            mobileStatus = 1
+        WHERE
+            id = #{id}
+    </update>
+
+    <update id="modifyUserOldStatus">
+        UPDATE
+            uc_user_info
+        SET
+            isOld = #{1}
+        WHERE
+            id = #{0}
+    </update>
+
+    <update id="addEnterpriseAuthen">
+       UPDATE
+           uc_user_info
+       SET
+           enterpriseName = #{enterpriseDto.enterpriseName},
+           organizationCode = #{enterpriseDto.organizationCode},
+           businessLicense=#{enterpriseDto.businessLicense},
+           businessLicenseRegisterNum = #{enterpriseDto.businessLicenseRegisterNum},
+           businessLicense = #{enterpriseDto.businessLicense},
+           areaLevel1 = #{enterpriseDto.areaLevel1},
+           areaLevel2 = #{enterpriseDto.areaLevel2},
+           areaLevel3 = #{enterpriseDto.areaLevel3},
+           address = #{enterpriseDto.address},
+           examineStatus = #{enterpriseDto.examineStatus}
+       WHERE
+           id = #{id}
+   </update>
+
+
+    <update id="modifyUserEmailStatus">
+        UPDATE
+          uc_user_info
+        SET
+          emailStatus = #{status}
+        WHERE
+          id = #{id}
+    </update>
+
+   	<update id="updateEnterpriseAuthen">
+       UPDATE
+           uc_user_info
+       SET
+           enterpriseName = #{enterpriseDto.enterpriseName},
+           organizationCode = #{enterpriseDto.organizationCode},
+           businessLicense=#{enterpriseDto.businessLicense},
+           businessLicenseRegisterNum = #{enterpriseDto.businessLicenseRegisterNum},
+           businessLicense = #{enterpriseDto.businessLicense},
+           areaLevel1 = #{enterpriseDto.areaLevel1},
+           areaLevel2 = #{enterpriseDto.areaLevel2},
+           areaLevel3 = #{enterpriseDto.areaLevel3},
+           address = #{enterpriseDto.address},
+           examineStatus = #{enterpriseDto.examineStatus}
+       WHERE
+           id = #{id}
+   </update>
+   <update id="updatePersonAuthen">
+       UPDATE
+           uc_user_info
+       SET
+           examineStatus = #{personDto.examineStatus},
+           contacts=#{personDto.contacts},
+           idCard=#{personDto.idCard},
+           idCardPhoto=#{personDto.idCardPhoto},
+           address = #{personDto.address}
+       WHERE
+           id = #{id}
+   </update>
+   <update id="updateUserAvatar">
+       UPDATE
+           uc_user_info
+       SET
+           userAvatar = #{userAvatar}
+       WHERE
+           id = #{id}
+   </update>
+
+    <select id="findGreaterIds" resultMap="userResultMap">
+        SELECT id from uc_user_info
+        WHERE id &gt; #{id}
+    </select>
+
+    <update id="startOrStopCustomer">
+        UPDATE
+        uc_user_info
+        SET
+        userStatus = #{userStatus}
+        WHERE
+        id = #{id}
+    </update>
+
+</mapper>

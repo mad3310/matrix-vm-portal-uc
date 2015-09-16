@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <typeAliases>
+
+        <typeAlias alias="user" type="com.letvcloud.uc.po.User"/>
+
+        <typeAlias alias="country" type="com.letvcloud.uc.po.Country"/>
+
+        <typeAlias alias="area" type="com.letvcloud.uc.po.Area"/>
+
+        <typeAlias alias="invoice" type="com.letvcloud.uc.po.Invoice"/>
+
+        <typeAlias alias="message" type="com.letvcloud.uc.po.Message"/>
+    </typeAliases>
+
+    <plugins>
+        <plugin interceptor="com.letvcloud.uc.interceptor.PaginationInterceptor"/>
+    </plugins>
+
+</configuration>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ielow" lang="zh-CN">
+<![endif]-->
+<!--[if (gt IE 8)|!(IE)]><!-->
+<html lang="zh-CN">
+<!--<![endif]-->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<title>乐视云视频-最专业的视频开放平台，提供一站式视频解决方案</title>
+	<meta name="Keywords" content="乐视云视频，免费视频空间，视频存储，免费空间，企业视频，播客，视频建站，视频营销，在线视频，开放平台"/>
+	<meta name="Description" content="乐视云视频是乐视网旗下视频开放平台，专注于为客户提供视频上传、存储、转码、调取、个性化定制、统计等一站式视频解决方案"/>
+	<link rel="shortcut icon" href="images/favicon.ico" />
+	<link type="text/css" rel="stylesheet" href="css/min/usercenterApp.css"/>
+	<!--[if lt IE 9]>
+	<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<!--[if IE 8]>
+	<div class="ielow-div"><div class="ielow-content">亲，您正在使用过时的浏览器，提升体验您可以：<img src="images/ie6_ie.png"><a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie">【升级IE浏览器】</a>或下载<img src="images/ie6_360.png" style="padding-left: 8px"><a href="http://se.360.cn/">【360安全浏览器】</a><img src="images/ie6_chrome.png" style="padding-left: 8px"><a href="http://www.google.cn/intl/zh-CN/chrome/">【chrome浏览器】</a></div></div>
+	<![endif]-->
+	<!--[if lte IE 7]>
+	<script src="js/min/lowBowerNoie.js"></script>
+	<![endif]-->
+</head>
+<body>
+<!-- 顶部head/S-->
+<header class="le-head-user">
+	<div class="comwidth clearfix">
+		<h1 class="pull-left logo"><a href="#"><img src="images/logo.png" alt="logo"></a></h1>
+		<div class="pull-right info">
+			<span>欢迎您，<a href="#">letvcloud@qq.com</a></span>
+			<span><a href="#">退出</a><label>|</label><a href="#">用户中心</a><label>|</label><a href="#">帮助与支持</a></span>
+			<span><i class="icon-msg-w"></i><label><a href="#">(12)</a></label></span>
+			<span id="manage-control">管理控制台 <i class="icon-dropdown"></i></span>
+		</div>
+	</div>
+</header>
+<!-- 顶部head/E-->
+<!-- 中部内容/S-->
+<section class="le-user-main comwidth clearfix">
+	<div class="le-user-warp clearfix" id="usercenter">
+		<!-- 左侧/S-->
+		<div class="le-user-side" id="userside">
+			<h2 class="title"><i class="icon-user-centers"></i><span>用户中心</span></h2>
+			<ul class="items clearfix">
+				<li class="a"><a href="#"><i class="icon-nav-people"></i><span>用户中心概览</span></a>
+				</li>
+				<li class="b"><a href="#"><i class="icon-nav-manage"></i><span>账号管理</span></a>
+				</li>
+				<li class="c">
+					<a href="javascript:;"><i class="icon-nav-server"></i><span>我的服务</span></a>
+					<dl class="clearfix">
+						<dd><a href="#">云点播</a>
+						</dd>
+						<dd><a href="#">云直播</a>
+						</dd>
+						<dd><a href="#">CDN</a>
+						</dd>
+					</dl>
+					<em class="icon-dropdown-gary"></em>
+				</li>
+				<li class="active d"><a href="#"><i class="icon-nav-bill"></i><span>我的账单</span></a>
+				</li>
+				<li class="e"><a href="#"><i class="icon-nav-key"></i><span>用户私钥</span></a>
+				</li>
+				<li class="f"><a href="#"><i class="icon-nav-invoice"></i><span>发票设置</span></a>
+				</li>
+				<li class="g"><a href="#"><i class="icon-nav-message"></i><span>消息中心</span></a>
+				</li>
+			</ul>
+		</div>
+		<!-- 左侧/E-->
+		<!-- 右侧/S-->
+		<div class="le-user-box clearfix" id="userbox">
+			<div class="le-user-con clearfix">
+				<h3 class="title-wj">月账单</h3>
+				<div class="account-yao">
+					<div class="roll-title">
+						<div class="ul-wraper">
+							<ul class="clearfix">
+								<li class="active"><a href="#">当月</a>
+								</li>
+								<li><a href="#">2015.5</a>
+								</li>
+								<li><a href="#">2015.3</a>
+								</li>
+								<li><a href="#">2015.2</a>
+								</li>
+								<li><a href="#">2015.5</a>
+								</li>
+								<li><a href="#">2014.12</a>
+								</li>
+								<li><a href="#">2014.11</a>
+								</li>
+								<li><a href="#">2014.10</a>
+								</li>
+								<li><a href="#">2014.9</a>
+								</li>
+								<li><a href="#">2015.3</a>
+								</li>
+								<li><a href="#">2015.2</a>
+								</li>
+								<li><a href="#">2015.5</a>
+								</li>
+								<li><a href="#">2014.12</a>
+								</li>
+								<li><a href="#">2014.11</a>
+								</li>
+								<li><a href="#">2014.10</a>
+								</li>
+								<li><a href="#">2014.9</a>
+								</li>
+							</ul>
+						</div>
+						<div class="dropdown dropdown-year">
+							<button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+								2014
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">2015</a>
+								</li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">2016</a>
+								</li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">2017</a>
+								</li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">2018</a>
+								</li>
+							</ul>
+						</div>
+						<a href="#" class="prev">前一个</a>
+						<a href="#" class="next">后一个</a>
+					</div>
+					<div class="row row-yue-account">
+						<div class="le-col-3">
+							<span class="item">总费用：</span><span class="num">￥1280</span>
+						</div>
+						<div class="le-col-3">
+							<span class="item">已结算费用：</span><span class="num">￥480</span>
+						</div>
+						<div class="le-col-3">
+							<span class="item">累计欠费：</span><span class="num text-important">￥800</span>
+						</div>
+						<div class="le-col-3">
+							<a href="#" class="btn btn-danger">立即充值</a>
+						</div>
+					</div>
+					<table class="table table-account-yue">
+						<thead>
+							<tr>
+								<th>产品服务</th>
+								<th>截止账期</th>
+								<th>费用</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>云点播</td>
+								<td>2015-06-30</td>
+								<td>￥800</td>
+								<td>
+									<a href="#" class="btn btn-green">导出明细</a>
+									<a href="#" class="btn btn-primary">索要发票</a>
+								</td>
+							</tr>
+							<tr>
+								<td>云直播</td>
+								<td>2015-06-30</td>
+								<td>￥800</td>
+								<td>
+									<a href="#" class="btn btn-green">导出明细</a>
+									<a href="#" class="btn btn-primary">索要发票</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- 左侧/E-->
+	</div>
+</section>
+<!-- 中部内容/E-->
+<!-- 引入底部foot-->
+<!-- footer/S-->
+<footer class="footer">
+	<div class="comwidth clearfix">
+		<div class="pull-left">
+			<p class="clearfix"><a href="#">云产品</a><span class="space">|</span><a href="#">解决方案</a><span class="space">|</span><a href="#">帮助与支持</a><span class="space">|</span><a href="#">关于</a></p>
+			<p class="clearfix"><a href="#">京ICP备09045969号-7</a><span class="company">Copyright © 2004-2012 乐视网（letv.com）All right</span><a href="#"><i class="icon-nation-a"></i></a><a href="#"><i class="icon-nation-b"></i></a></p>
+			<p class="clearfix"><a href="#"><i class="icon-foot-sina"></i></a><a href="#"><i class="icon-foot-wechat"></i></a></p>
+		</div>
+		<div class="pull-right">
+			<span><label>可信云认证</label><i class="icon-authentication-a"></i></span>
+			<span><label>ISO27001认证</label><i class="icon-authentication-b"></i></span>
+		</div>
+	</div>
+</footer>
+<!-- footer/E-->
+<script type="text/javascript" src="js/min/usercenterApp.js?t=20150421"></script>
+</body>
+</html><!-- file tree:
+|...usercenter-zhangdan-yue.html
+|   |...header-usercenter.html
+|   |...footer.html
+- By MOKTEXT. -->

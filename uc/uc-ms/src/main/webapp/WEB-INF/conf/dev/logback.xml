@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+    <appender name="main" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>/letv/logs/uc-web/main.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <FileNamePattern>
+                /letv/logs/uc-web/main%i.log
+            </FileNamePattern>
+            <MinIndex>1</MinIndex>
+            <MaxIndex>5</MaxIndex>
+        </rollingPolicy>
+        <triggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>500MB</MaxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <Pattern>[%d{yyyyMMdd HH:mm:ss}] [%-5level] [%-30logger{0}][%-3L] [SeqId:%X{SeqId}] - %msg%n</Pattern>
+        </encoder>
+    </appender>
+    <appender name="HlsCutAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>/letv/logs/uc-web/HlsCut.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <FileNamePattern>
+                /letv/logs/uc-web/HlsCut%i.log
+            </FileNamePattern>
+            <MinIndex>1</MinIndex>
+            <MaxIndex>5</MaxIndex>
+        </rollingPolicy>
+        <triggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>500MB</MaxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <Pattern>[%d{yyyyMMdd HH:mm:ss}] [%-5level] [%-30logger{0}][%-3L] [SeqId:%X{SeqId}] - %msg%n</Pattern>
+        </encoder>
+    </appender>
+    <appender name="ucwebAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>/letv/logs/uc-web/bill-http.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <FileNamePattern>
+                /letv/logs/uc-web/bill-http%i.log
+            </FileNamePattern>
+            <MinIndex>1</MinIndex>
+            <MaxIndex>5</MaxIndex>
+        </rollingPolicy>
+        <triggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>500MB</MaxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <Pattern>[%d{yyyyMMdd HH:mm:ss}] [%-5level] [%-30logger{0}][%-3L] [SeqId:%X{SeqId}] - %msg%n</Pattern>
+        </encoder>
+    </appender>
+    <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <File>/letv/logs/uc-web/error.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <FileNamePattern>
+                /letv/logs/uc-web/error%i.log
+            </FileNamePattern>
+            <MinIndex>1</MinIndex>
+            <MaxIndex>5</MaxIndex>
+        </rollingPolicy>
+        <triggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>100MB</MaxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <Pattern>[%d{yyyyMMdd HH:mm:ss}] [%-5level] [%-30logger{0}][%-3L] [SeqId:%X{SeqId}] - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.letvcloud" additivity="false" level="debug">
+        <appender-ref ref="main"/>
+        <appender-ref ref="error"/>
+    </logger>
+    <logger name="com.letvcloud.framework.LogInterceptor" additivity="false" level="info">
+        <appender-ref ref="main"/>
+    </logger>
+    <logger name="HlsCut" level="debug" additivity="false">
+        <appender-ref ref="HlsCutAppender" />
+    </logger>
+    <logger name="ucweb" level="debug" additivity="false">
+        <appender-ref ref="ucwebAppender" />
+    </logger>
+    <root level="info">
+        <appender-ref ref="main"/>
+    </root>
+
+</configuration>

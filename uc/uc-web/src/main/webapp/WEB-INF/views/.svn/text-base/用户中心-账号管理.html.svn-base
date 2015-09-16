@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ielow" lang="zh-CN">
+<![endif]-->
+<!--[if (gt IE 8)|!(IE)]><!-->
+<html lang="zh-CN">
+<!--<![endif]-->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<title>乐视云视频-最专业的视频开放平台，提供一站式视频解决方案</title>
+	<meta name="Keywords" content="乐视云视频，免费视频空间，视频存储，免费空间，企业视频，播客，视频建站，视频营销，在线视频，开放平台"/>
+	<meta name="Description" content="乐视云视频是乐视网旗下视频开放平台，专注于为客户提供视频上传、存储、转码、调取、个性化定制、统计等一站式视频解决方案"/>
+	<link rel="shortcut icon" href="images/favicon.ico" />
+	<link type="text/css" rel="stylesheet" href="css/min/usercenterApp.css"/>
+	<!--[if lt IE 9]>
+	<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<!--[if IE 8]>
+	<div class="ielow-div"><div class="ielow-content">亲，您正在使用过时的浏览器，提升体验您可以：<img src="images/ie6_ie.png"><a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie">【升级IE浏览器】</a>或下载<img src="images/ie6_360.png" style="padding-left: 8px"><a href="http://se.360.cn/">【360安全浏览器】</a><img src="images/ie6_chrome.png" style="padding-left: 8px"><a href="http://www.google.cn/intl/zh-CN/chrome/">【chrome浏览器】</a></div></div>
+	<![endif]-->
+	<!--[if lte IE 7]>
+	<script src="js/min/lowBowerNoie.js"></script>
+	<![endif]-->
+</head>
+<body>
+<!-- 顶部head/S-->
+<header class="le-head-user">
+	<div class="comwidth clearfix">
+		<h1 class="pull-left logo"><a href="#"><img src="images/logo.png" alt="logo"></a></h1>
+		<div class="pull-right info">
+			<span>欢迎您，<a href="#">letvcloud@qq.com</a></span>
+			<span><a href="#">退出</a><label>|</label><a href="#">用户中心</a><label>|</label><a href="#">帮助与支持</a></span>
+			<span><i class="icon-msg-w"></i><label><a href="#">(12)</a></label></span>
+			<span id="manage-control">管理控制台 <i class="icon-dropdown"></i></span>
+		</div>
+	</div>
+</header>
+<!-- 顶部head/E-->
+<!-- 中部内容/S-->
+<section class="le-user-main comwidth clearfix">
+	<div class="le-user-warp clearfix" id="usercenter">
+		<!-- 左侧/S-->
+		<div class="le-user-side" id="userside">
+			<h2 class="title"><i class="icon-user-centers"></i><span>用户中心</span></h2>
+			<ul class="items clearfix">
+				<li class="a"><a href="#"><i class="icon-nav-people"></i><span>用户中心概览</span></a></li>
+				<li class="active b"><a href="#"><i class="icon-nav-manage"></i><span>账号管理</span></a></li>
+				<li class="c">
+					<a href="javascript:;"><i class="icon-nav-server"></i><span>我的服务</span></a>
+					<dl class="clearfix">
+						<dd><a href="#">云点播</a></dd>
+						<dd><a href="#">云直播</a></dd>
+						<dd><a href="#">CDN</a></dd>
+					</dl>
+					<em class="icon-dropdown-gary"></em>
+				</li>
+				<li class="d"><a href="#"><i class="icon-nav-bill"></i><span>我的账单</span></a></li>
+				<li class="e"><a href="#"><i class="icon-nav-key"></i><span>用户私钥</span></a></li>
+				<li class="f"><a href="#"><i class="icon-nav-invoice"></i><span>发票设置</span></a></li>
+				<li class="g"><a href="#"><i class="icon-nav-message"></i><span>消息中心</span></a></li>
+			</ul>
+		</div>
+		<!-- 左侧/E-->
+		<!-- 右侧/S-->
+		<div class="le-user-box clearfix" id="userbox">
+			<div class="le-user-con clearfix">
+				<h3 class="title-wj">用户信息</h3>
+				<div class="info-box-wj row clearfix">
+					<div class="le-col-7 user-info-wj">
+						<div class="face">
+							<p><img src="images/st-user-face-1.jpg" alt="用户头像" title="用户头像" /></p>
+							<p class="text-center"><button type="button" class="btn btn-default btn-xl mt-20" data-toggle="modal" data-target="#editFaceModal">修改头像</button></p>
+						</div>
+						<div class="info info-base">
+							<p>会员类型：个人会员</p>
+							<p>注册邮箱：letvcloud@qq.com</p>
+							<p>联系人姓名：乐视人</p>
+							<p>注册时间：YYYY-MM-dd</p>
+						</div>
+					</div>
+					<div class="le-col-5">
+						<div class="info-base le-col-offset-1">
+							<p>企业名称：乐视云计算有限公司</p>
+							<p>网站类型：互联网视频</p>
+							<p>网站名称：乐视网</p>
+							<p>网站域名：www.letvcloud.com</p>
+						</div>
+					</div>
+				</div>
+				<h3 class="title-wj mt-60">资质认证</h3>
+				<div class="info-box-borded-wj row clearfix">
+					<div class="le-col-10 le-col-md-10">
+						<p>资质认证后才可开具发票及开启云直播服务。</p>
+					</div>
+					<div class="le-col-2 le-col-md-2">
+						<p class="pull-right btn-groups">
+							<a href="#" class="btn btn-primary btn-xl">立即认证</a>
+						</p>
+					</div>
+				</div>
+				<h3 class="title-wj">登录密码</h3>
+				<div class="info-box-borded-wj row clearfix">
+					<div class="le-col-10 le-col-md-10">
+						<p>安全性高的密码可以使账号更安全。建议您定期更换密码，设置一个饱和字母、符号或数字中至少两项且长度超过6位的密码。</p>
+					</div>
+					<div class="le-col-2 le-col-md-2">
+						<p class="pull-right btn-groups">
+							<button type="button" class="btn btn-default btn-xl" data-toggle="modal" data-target="#editPwdModal">更换</button>
+						</p>
+					</div>
+				</div>
+				<h3 class="title-wj">手机绑定</h3>
+				<div class="info-box-borded-wj row clearfix">
+					<div class="le-col-10 le-col-md-10">
+						<p>您已绑定了手机131****7896。[您的手机号可以直接用于登录、找回密码等]</p>
+					</div>
+					<div class="le-col-2 le-col-md-2">
+						<p class="pull-right btn-groups">
+							<button type="button" class="btn btn-default btn-xl" data-toggle="modal" data-target="#editPhoneModal">更换</button>
+						</p>
+					</div>
+				</div>
+				<h3 class="title-wj">邮箱绑定</h3>
+				<div class="info-box-wj row clearfix">
+					<div class="le-col-10 le-col-md-10">
+						<p>可用于快速找回密码，接收账户余额变动等信息提醒。</p>
+					</div>
+					<div class="le-col-2 le-col-md-2">
+						<p class="pull-right btn-groups">
+							<a href="#" class="btn btn-default btn-xl">立即激活</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 左侧/E-->
+	</div>
+</section>
+<!-- 中部内容/E-->
+<!-- 修改头像/S -->
+<div class="modal fade" id="editFaceModal" tabindex="-1" role="dialog" aria-labelledby="editFaceModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-header-primary">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="editFaceModalLabel">修改我的头像</h4>
+      </div>
+      <div class="modal-body">
+         <div class="modal-warp modal-warp-edit-face row clearfix">
+         	<form class="vform" action="" method="post">
+	         	<div class="le-col-4">
+	         		<h5 class="title">当前头像</h5>
+	         		<p><img src="images/st-user-face-default.jpg" alt="用户头像" class="face"></p>
+	         	</div>
+	         	<div class="le-col-8">
+	         		<h5 class="title">新的头像</h5>
+					<div class="clearfix">
+						<div class="le-file-input-box pull-left clearfix">
+							<button type="button" class="btn btn-default btn-xl le-btn-file">点击选择图片</button>
+							<input type="file" name="" class="le-file-input form-input-required" nullmsg="请上传图片！"/>
+						</div>
+						<div class="Validform_checktip pull-left"></div>
+					</div>
+					<p>图片文件最大5M，支持JPG，BMP格式的图片。</p>
+					<p><input type="submit" class="btn btn-primary btn-xl mt-50" value="确定" /></p>
+	         	</div>
+         	</form>
+         </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">保存</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+<!-- 修改头像/E -->
+<!-- 修改密码/S -->
+<div class="modal fade" id="editPwdModal" tabindex="-1" role="dialog" aria-labelledby="editPwdModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-header-primary">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="editPwdModalLabel">修改密码</h4>
+      </div>
+      <div class="modal-body">
+	     <div class="modal-warp modal-warp-edit-pwd clearfix">
+	     	<form class="form-horizontal vform" action="" method="post">
+		     	<div class="form-group">
+				    <label for="upwdOlder" class="le-col-4 control-label">当前登录密码：</label>
+				    <div class="le-col-8">
+				      <input type="password" id="upwdOlder" name="upwdOlder" class="form-control form-input-required form-input-required-pwd" nullmsg="请输入旧密码！" errormsg="密码范围在6~16位之间！" placeholder="旧密码" value="" />
+				    </div>
+				</div>
+				<div class="form-group">
+				    <label for="upwdNew" class="le-col-4 control-label">新的登录密码：</label>
+				    <div class="le-col-8">
+				      <input type="password" id="upwdNew" name="upwdNew" class="form-control form-input-required form-input-required-pwd" nullmsg="请输入新密码！" errormsg="密码范围在6~16位之间！" placeholder="新密码" value="" />
+				    </div>
+				</div>
+				<div class="form-group">
+				    <label for="upwdNewRe" class="le-col-4 control-label">确认新的登录密码：</label>
+				    <div class="le-col-8">
+				      <input type="password" id="upwdNewRe" name="upwdNewRe" class="form-control form-input-required form-input-required-pwd" recheck="upwdNew" nullmsg="请输入确认密码！" errormsg="您两次输入的密码不一致！" placeholder="确认密码" value="" />
+				    </div>
+				</div>
+				<div class="form-group">
+					<div class="le-col-8 le-col-offset-4">
+				      <input type="submit" class="btn btn-primary btn-xl mt-20" value="确定" />
+				    </div>
+				</div>
+			</form>
+	     </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">保存</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+<!-- 修改密码/E -->
+<!-- 手机绑定/S -->
+<div class="modal fade" id="editPhoneModal" tabindex="-1" role="dialog" aria-labelledby="editPhoneModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-header-primary">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="<editPhoneModalLabel></editPhoneModalLabel>">手机绑定</h4>
+      </div>
+      <div class="modal-body">
+         <div class="modal-warp modal-warp-edit-phone row clearfix">
+         	<p>请妥善保管验证码，勿让他人获取。</p>
+         	<form class="form-horizontal form-sms" id="editPhoneModalForm" action="" method="post">
+		     	<div class="form-group">
+				    <label for="uphoneEdit" class="le-col-2 control-label">手机号： </label>
+				    <div class="le-col-6">
+				       <input type="text" class="form-control form-sms-phone" id="uphoneEdit" placeholder="手机号" value="" />
+				    </div>
+				    <div class="le-col-4">
+				       <button type="button" class="btn btn-normal btn-xl btn-sms-code">免费获取验证码</button>
+				    </div>
+				</div>
+				<div class="form-group">
+				    <label for="uphoneCode" class="le-col-2 control-label">验证码：</label>
+				    <div class="le-col-6">
+				      <input type="text" class="form-control" id="uphoneCode" placeholder="验证码" value="" />
+				    </div>
+				</div>
+				<div class="form-group">
+					<div class="le-col-8 le-col-offset-2">
+				      <input type="button" class="btn btn-primary btn-xl btn-submit mt-20" value="确定" />
+				    </div>
+				</div>
+			</form>
+         </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">保存</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+<!-- 手机绑定/E -->
+<!-- 引入底部foot-->
+<!-- footer/S-->
+<footer class="footer">
+	<div class="comwidth clearfix">
+		<div class="pull-left">
+			<p class="clearfix"><a href="#">云产品</a><span class="space">|</span><a href="#">解决方案</a><span class="space">|</span><a href="#">帮助与支持</a><span class="space">|</span><a href="#">关于</a></p>
+			<p class="clearfix"><a href="#">京ICP备09045969号-7</a><span class="company">Copyright © 2004-2012 乐视网（letv.com）All right</span><a href="#"><i class="icon-nation-a"></i></a><a href="#"><i class="icon-nation-b"></i></a></p>
+			<p class="clearfix"><a href="#"><i class="icon-foot-sina"></i></a><a href="#"><i class="icon-foot-wechat"></i></a></p>
+		</div>
+		<div class="pull-right">
+			<span><label>可信云认证</label><i class="icon-authentication-a"></i></span>
+			<span><label>ISO27001认证</label><i class="icon-authentication-b"></i></span>
+		</div>
+	</div>
+</footer>
+<!-- footer/E-->
+<script type="text/javascript" src="js/min/usercenterApp.js?t=20150421"></script>
+</body>
+</html><!-- file tree:
+|...usercenter-zhanghao.html
+|   |...header-usercenter.html
+|   |...usercenter-header.html
+|   |...footer.html
+- By MOKTEXT. -->

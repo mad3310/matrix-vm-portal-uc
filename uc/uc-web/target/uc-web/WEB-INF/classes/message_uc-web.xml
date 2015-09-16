@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+    <message code="E09001">流ID错误:{0}，包含了非法字符</message>
+    <message code="E09002">tm已经过期:{0}</message>
+    <message code="E09003">缺少参数:{0}</message>
+    <message code="E09004">加密验证错误,当前密码为:{0}</message>
+    <message code="E09005">liveId和streamId有且只能有一个</message>
+    <message code="E09006">流名称错误:{0}，包含了非法字符</message>
+    <message code="E09007">应用名称错误:{0}，包含了非法字符</message>
+</messages>

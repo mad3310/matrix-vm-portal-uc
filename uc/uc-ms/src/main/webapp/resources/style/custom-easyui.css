@@ -1,0 +1,53 @@
+/*自定义图标*/
+.icon-validatebox_warning{
+	background:url('../images/validatebox_warning.png') no-repeat center center;
+}
+.icon-reset{
+    background:url('../images/reset_icon.png') no-repeat center center;
+}
+.icon-expand{
+    background:url('../images/expand_16.png') no-repeat center center;
+}
+.icon-collapse{
+    background:url('../images/collapse_16.png') no-repeat center center;
+}
+.icon-goto{
+    background:url('../images/goto_16.png') no-repeat center center;
+}
+.icon-up{
+    background:url('../images/icon_moveup.png') no-repeat center center;
+}
+.icon-down{
+    background:url('../images/icon_movedown.png') no-repeat center center;
+}
+
+.icon-release{
+    background:url('../images/release.png') no-repeat center center;
+}
+
+.easyui-linkbutton {
+}
+
+/*覆盖easyui默认的式样
+.panel-title {
+  font-size: 14px;
+}
+.combo .combo-text {
+  font-size: 14px;
+}
+.combobox-group {
+  font-size: 14px;
+}
+.tabs-title {
+  font-size: 14px;
+}
+.panel-body {
+  font-size: 14px;
+}
+.tree-title {
+  font-size: 14px;
+}*/
+
+.dialog-button {
+	background:#F4F4F4;
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.letvcloud.uc.mapper.AreaMapper">
+
+    <resultMap id="areaResultMap" type="area">
+
+    </resultMap>
+    <sql id="getArea">
+       SELECT
+          id,
+          areaCode,
+          areaName,
+          upAreaCode,
+          areaLevel
+       FROM
+          uc_area
+    </sql>
+
+    <select id="getAreaByLevel" resultMap="areaResultMap">
+      <include refid="getArea"/>
+      WHERE
+          areaLevel = #{level}
+    </select>
+
+    <select id="getAreaByUpAreaCode" resultMap="areaResultMap">
+        <include refid="getArea"/>
+        WHERE
+        upAreaCode = #{upAreaCode}
+    </select>
+    
+    
+    <select id="getSingleArea" resultMap="areaResultMap">
+      <include refid="getArea"/>
+      WHERE
+          id = #{id}
+    </select>
+
+</mapper>

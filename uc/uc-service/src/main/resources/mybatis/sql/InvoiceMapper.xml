@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.letvcloud.uc.mapper.InvoiceMapper">
+
+    <resultMap id="invoiceResultMap" type="invoice">
+    </resultMap>
+
+    <insert id="saveInvoice">
+        INSERT INTO uc_invoice
+        (
+        issueType,
+        invoiceType,
+        invoiceTitle,
+        receiveName,
+        areaLevel1,
+        areaLevel2,
+        areaLevel3,
+        address,
+        zipCode,
+        mobile,
+        createdTime,
+        lastUpdateTime,
+        userId
+        )
+        VALUES
+        (
+        #{issueType},
+        #{invoiceType},
+        #{invoiceTitle},
+        #{receiveName},
+        #{areaLevel1},
+        #{areaLevel2},
+        #{areaLevel3},
+        #{address},
+        #{zipCode},
+        #{mobile},
+        now(),
+        now(),
+        #{userId}
+        )
+    </insert>
+
+    <select id="getInvoiceByUserId" resultMap="invoiceResultMap">
+      SELECT
+        issueType,
+        invoiceTitle,
+        invoiceType,
+        receiveName,
+        areaLevel1,
+        areaLevel2,
+        areaLevel3,
+        address,
+        zipCode,
+        mobile,
+        createdTime,
+        lastUpdateTime,
+        userId,
+        id
+    FROM
+        uc_invoice
+    WHERE
+        userId = #{userId}
+    </select>
+
+
+    <update id="modifyInvoiceByUserId">
+        UPDATE
+          uc_invoice
+        <set>
+            <if test="invoice.issueType != null">issueType=#{invoice.issueType},</if>
+            <if test="invoice.invoiceTitle != null and invoice.invoiceTitle !=''">
+                invoiceTitle=#{invoice.invoiceTitle},
+            </if>
+            <if test="invoice.invoiceType != null">invoiceType=#{invoice.invoiceType},</if>
+            <if test="invoice.receiveName != null and invoice.receiveName !=''">receiveName=#{invoice.receiveName},</if>
+            <if test="invoice.areaLevel1 != null and invoice.areaLevel1 !=''">areaLevel1=#{invoice.areaLevel1},</if>
+            <if test="invoice.areaLevel2 != null and invoice.areaLevel2 !=''">areaLevel2=#{invoice.areaLevel2},</if>
+            <if test="invoice.areaLevel3 != null and invoice.areaLevel3 !=''">areaLevel3=#{invoice.areaLevel3},</if>
+            <if test="invoice.address != null and invoice.address !=''">address=#{invoice.address},</if>
+            <if test="invoice.zipCode != null and invoice.zipCode !=''">zipCode=#{invoice.zipCode},</if>
+            <if test="invoice.mobile != null and invoice.mobile !=''">mobile=#{invoice.mobile},</if>
+            lastUpdateTime = now()
+        </set>
+        WHERE
+        userId = #{invoice.userId}
+    </update>
+
+
+</mapper>

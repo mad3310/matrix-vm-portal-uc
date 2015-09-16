@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<description>Shiro安全配置</description>
+    
+
+    <bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <constructor-arg value="lecloud_uc_jsessionid"/>
+        <property name="httpOnly" value="true"/>
+        <property name="domain" value="${cookieDomain}" />
+    </bean>
+    
+    <!-- 会话DAO -->
+    <bean id="sessionDAO" class="com.letvcloud.uc.security.CustomSessionDAO">
+    </bean>
+    
+    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">  
+        <property name="globalSessionTimeout" value="1800000"/>
+        <property name="sessionValidationSchedulerEnabled" value="false"/>
+        <property name="sessionDAO" ref="sessionDAO"/>  
+        <property name="sessionIdCookieEnabled" value="true"/>  
+        <property name="sessionIdCookie" ref="sessionIdCookie"/>
+    </bean>
+    
+	<!-- Shiro's main business-tier object for web-enabled applications -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="realm" ref="shiroDbRealm" />
+		<property name="cacheManager" ref="customCacheManager" />
+		<property name="sessionManager" ref="sessionManager"/>
+	</bean>
+
+	<bean id="shiroDbRealm" class="com.letvcloud.uc.security.ShiroDbRealm"/>
+	<!-- Shiro Filter -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+        <property name="loginUrl" value="/login.do" />
+		<property name="filterChainDefinitions">
+			<value>
+			    /assets/** = anon
+                /favicon.ico* = anon
+                /register* = anon
+                /captcha/createCaptcha.do = anon
+                /captcha/checkCaptcha.do = anon
+                /captcha/yzmCheck.do = anon
+                /captcha/createCaptchaForPhone.do = anon
+                /captcha/checkCaptchaForPhone.do = anon
+                /register*/** = anon
+                /restPassword*/** = anon
+                /user/userInfo.do = anon
+                /user/sendMsg.do = anon
+                /user/isEmail.do = anon
+                /user/mobileIsExist.do = anon
+                /user/emailIsExist.do = anon
+                /user/isMobileNum.do = anon
+                /user/checkMobileCode.do  = anon
+                /user/searchUserByMobile.do = anon
+                /user/searchUserByEmail.do=anon
+                /user/findGreaterIds.do=anon
+                /register/registerUser.do = anon
+                /user/userInfo.do = anon
+                /user/sendMsgForBack.do = anon
+                /user/sendMsgCheckYzm.do = anon
+                /showHeader.do = anon
+                /showHeaderUc.do = anon
+                /conmmonPage/showHeaderParam.do = anon
+                /showFooter.do = anon
+				/login.do = anon
+                /email/activate.do = anon
+				/logout.do = anon
+                /recharge/rechargeFinish.do = anon
+                /recharge/rechargeSuccess.do = anon
+                /** = user
+			</value>
+		</property>
+	</bean>
+	
+	<!-- 用户授权信息Cache, 采用EhCache -->
+	<bean id="customCacheManager" class="com.letvcloud.uc.security.CustomCacheManager">
+        <property name="expireTime" value="1800"/>
+    </bean>
+    
+	<!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+</beans>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+    <appender name="main" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>/Users/lyx/main.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <FileNamePattern>
+                /Users/lyx/main%i.log
+            </FileNamePattern>
+            <MinIndex>1</MinIndex>
+            <MaxIndex>5</MaxIndex>
+        </rollingPolicy>
+        <triggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxfilesize>500mb</maxfilesize>
+        </triggeringPolicy>
+        <encoder>
+            <Pattern>[%d{yyyyMMdd HH:mm:ss}] [%-5level] [%-30logger{0}][%-3L] [SeqId:%X{SeqId}] - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+
+    <appender name="loginModifyPwdAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>/Users/lyx/loginModifyPwd.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <FileNamePattern>
+                /Users/lyx/loginModifyPwd%i.log
+            </FileNamePattern>
+            <MinIndex>1</MinIndex>
+            <MaxIndex>5</MaxIndex>
+        </rollingPolicy>
+        <triggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>500MB</MaxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <Pattern>[%d{yyyyMMdd HH:mm:ss}] [%-5level] [%-30logger{0}][%-3L] [SeqId:%X{SeqId}] - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="registerAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>/Users/lyx/register.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <FileNamePattern>
+                /Users/lyx/register%i.log
+            </FileNamePattern>
+            <MinIndex>1</MinIndex>
+            <MaxIndex>5</MaxIndex>
+        </rollingPolicy>
+        <triggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>500MB</MaxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <Pattern>[%d{yyyyMMdd HH:mm:ss}] [%-5level] [%-30logger{0}][%-3L] [SeqId:%X{SeqId}] - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+
+    <appender name="modifyMobileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>/Users/lyx/modifyMobile.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <FileNamePattern>
+                /Users/lyx/modifyMobile%i.log
+            </FileNamePattern>
+            <MinIndex>1</MinIndex>
+            <MaxIndex>5</MaxIndex>
+        </rollingPolicy>
+        <triggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>500MB</MaxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <Pattern>[%d{yyyyMMdd HH:mm:ss}] [%-5level] [%-30logger{0}][%-3L] [SeqId:%X{SeqId}] - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+
+    <logger name="loginAndModifyPwd" level="info" additivity="false">
+        <appender-ref ref="loginModifyPwdAppender" />
+    </logger>
+    <logger name="com.letvcloud.uc.controller.RegisterController" level="info" additivity="false">
+        <appender-ref ref="registerAppender" />
+    </logger>
+    <logger name="modifyMobile" level="info" additivity="false">
+        <appender-ref ref="modifyMobileAppender" />
+    </logger>
+    <root level="info">
+        <appender-ref ref="main"/>
+    </root>
+
+</configuration>

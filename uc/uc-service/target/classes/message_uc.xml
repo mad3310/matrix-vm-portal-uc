@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+
+    <!--业务异常，E05开头-->
+    <message code="E25105">部署工作流出錯,错误信息:{0}</message>
+    
+    
+    <message code="E05106">手机号码为{0}重复:{1}次</message>
+    <message code="E05107">邮箱为{0}重复:{1}次</message>
+</messages>

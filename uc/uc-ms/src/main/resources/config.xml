@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config>
+    <encoding>UTF-8</encoding>
+
+    <!-- 不用登录就可以访问的url列表 -->
+    <excludeUrls>
+        <excludeUrl>/docs</excludeUrl>
+        <excludeUrl>/resources</excludeUrl>
+        <excludeUrl>/localIp</excludeUrl>
+        <excludeUrl>/cbase</excludeUrl>
+        <excludeUrl>/redis</excludeUrl>
+        <excludeUrl>/framework/metadata/codeInfos</excludeUrl>
+        <excludeUrl>/framework/metadata/codeTypes/all</excludeUrl>
+
+    </excludeUrls>
+</Config>

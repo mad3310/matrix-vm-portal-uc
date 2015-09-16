@@ -1,0 +1,154 @@
+@charset "utf-8";
+html {
+    SCROLLBAR-FACE-COLOR: #eaf3ff;
+    SCROLLBAR-HIGHLIGHT-COLOR: #acdfd6;
+    SCROLLBAR-SHADOW-COLOR: #acdfd6;
+    SCROLLBAR-3DLIGHT-COLOR: #F0F0F0;
+    SCROLLBAR-ARROW-COLOR: #240024;
+    SCROLLBAR-TRACK-COLOR: #F0F0F0;
+    SCROLLBAR-DARKSHADOW-COLOR: #d0f2f3;
+    SCROLLBAR-BASE-COLOR: #fcfcfc
+}
+
+/*所有Tab页中显示的页面默认的body样式*/
+body {
+    text-align: left;
+    margin: 8px;
+    /*width: 980px;*/
+    color: #546c89;
+    background: #FFF;
+}
+
+/*显示在首页中的子页面的body式样*/
+.main_page_body {
+	width:750px;
+	padding:3px;
+}
+
+/*搜索条件显示的外层的panel式样*/
+.ms-panel-outer {
+	width: 980px;
+	padding:5px;
+	margin: 0 0 10px 0;
+}
+
+.normaltext {
+    width: 150px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0px 5px;
+    border: 1px solid #bdbcc2;
+}
+
+.readonlytext {
+    width: 250px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0px 5px;
+    border: 1px solid #bdbcc2;
+}
+
+.app_words_text {
+    width: 200px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0px 5px;
+    border: 1px solid #bdbcc2;
+}
+
+.bigtext {
+    width: 200px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0px 5px;
+    border: 1px solid #bdbcc2;
+}
+
+.longtext {
+    width: 600px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0px 5px;
+    border: 1px solid #bdbcc2;
+}
+
+.readonly {
+    background-color: #eaf3ff;
+    border-width: 0px;
+}
+
+.readonly2 {
+    background-color: transparent;
+    border-width: 0px;
+    color: #516480;
+}
+
+.textarea {
+    width: 600px;
+    height: 100px;
+    line-height: 20px;
+    padding: 5px;
+    border: 1px solid #bdbcc2;
+    font-size: 12px;
+    resize: none;
+}
+
+.item_name {
+    padding: 0 0 0 5px;
+    height:31px;
+    width: 19%;
+    background-color: #d0f2f3;
+}
+
+.item_value {
+    width: 31%;
+    background-color: #eaf3ff;
+}
+
+.span3 {
+    width: 81%;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.displayNone {
+    display: none;
+}
+
+.toolTip { /* This is the hook that the jQuery script will use */
+    padding-right: 20px; /* This is need to make sure that the help icon is always visible */
+    background: transparent url(../images/help.gif) no-repeat right;
+    width: 30px;
+    color: #3366FF;
+    cursor: help;
+    position: relative; /* This contains the .toolTipWrapper div that is absolutely positioned  */
+}
+
+.toolTipWrapper { /* The wrapper holds its insides together */
+    width: 200px;
+    position: absolute; /* Absolute will make the tooltip float above other content in the page */
+    top: 0;
+    display: none; /* It has to be displayed none so that the jQuery fadein and fadeout functions will work */
+    color: #FBFB8C;
+    font-weight: bold;
+    font-size: 9pt; /* A font size is needed to maintain consistancy */
+}
+
+.toolTipTop { /* Top section of the tooltip */
+    width: 175px;
+    height: 30px;
+    background: #FBFB8C transparent no-repeat;
+}
+
+.toolTipMid { /* Middle section of the tooltip */
+    padding: 8px 15px;
+    color:black;
+    background: #FBFB8C repeat-x top;
+}
+
+.toolTipBtm { /* Bottom Section of the tooltip */
+    height: 13px;
+    background: #FBFB8C transparent no-repeat;
+}

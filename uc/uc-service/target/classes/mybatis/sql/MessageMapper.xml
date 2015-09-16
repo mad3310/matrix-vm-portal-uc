@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.letvcloud.uc.mapper.MessageMapper">
+    <resultMap id="messageResultMap" type="message">
+    </resultMap>
+
+    <sql id="getMessage">
+        SELECT
+	        um.id,
+	        msgTitle,
+	        msgContent,
+	        createdTime,
+	        lastUpdateTime,
+	        msgType,
+	        umu.msgStatus
+      FROM
+        	uc_message um,
+			uc_msg_user umu 
+    </sql>
+    
+    <sql id="getSysMsg">
+          SELECT
+	        um.id,
+	        msgTitle,
+	        msgContent,
+	        createdTime,
+	        lastUpdateTime,
+	        msgType,
+	        0 AS msgStatus 
+      	FROM
+			uc_message um 
+	 	WHERE um.id NOT IN (SELECT  umu.msgId  FROM uc_msg_user umu WHERE umu.userId = #{userId})  AND um.msgType = 0 AND um.createdTime &gt;= #{registerTime}
+    </sql>
+
+    <select id="getMessageListByPage" resultMap="messageResultMap">
+        <include refid="getMessage"/>
+	        WHERE
+				umu.userId = #{userId}
+			AND
+				umu.msgStatus != 2
+			AND
+				umu.msgId = um.id
+		UNION 
+		<include refid="getSysMsg"/>
+		ORDER BY createdtime DESC
+    </select>
+    
+    <select id="getUnReadMessageListByPage" resultMap="messageResultMap">
+        <include refid="getMessage"/>
+	        WHERE
+				umu.userId = #{userId}
+			AND
+				umu.msgStatus = 0
+			AND
+				umu.msgId = um.id
+		UNION 
+		<include refid="getSysMsg"/>
+		ORDER BY createdtime DESC
+    </select>
+
+    <select id="getMessageById" resultMap="messageResultMap">
+        SELECT
+	        um.id,
+	        msgTitle,
+	        msgContent,
+	        createdTime,
+	        lastUpdateTime,
+	        msgType,
+	        0 AS msgStatus 
+      	FROM uc_message um 
+        WHERE
+			um.id = #{msgId}
+    </select>
+    
+    <select id="getMessageByTimePage" resultMap="messageResultMap">
+        <include refid="getMessage"/>
+	        WHERE
+				umu.userId = #{userId}
+			<if test="startTime!=null and startTime!='' ">
+				AND
+					um.createdTime  &gt;= #{startTime}
+			 </if>
+	       	<if test="endTime!=null and endTime!=''">
+				AND
+					um.createdTime  &lt;= #{endTime}
+			</if>
+			AND
+				umu.msgStatus != 2
+			AND
+				umu.msgId = um.id
+		UNION  (
+			<include refid="getSysMsg"/>
+			<if test="startTime!=null and startTime!='' ">
+				AND
+					um.createdTime  &gt;= #{startTime}
+			 </if>
+	       	<if test="endTime!=null and endTime!=''">
+				AND
+					um.createdTime  &lt;= #{endTime}
+			</if>
+		)
+		ORDER BY createdtime DESC
+    </select>
+    
+    <select id="getMessageByStatusPage" resultMap="messageResultMap">
+        <include refid="getMessage"/>
+	        WHERE
+				umu.userId = #{userId}
+			<if test="startTime!=null and startTime!='' ">
+				AND
+					um.createdTime  &gt;= #{startTime}
+			 </if>
+	       	<if test="endTime!=null and endTime!=''">
+				AND
+					um.createdTime  &lt;= #{endTime}
+			</if>
+			AND
+				umu.msgStatus = #{msgStatus}
+			AND
+				umu.msgId = um.id
+		UNION  (
+			<include refid="getSysMsg"/>
+			<if test="startTime!=null and startTime!='' ">
+				AND
+					um.createdTime  &gt;= #{startTime}
+			 </if>
+	       	<if test="endTime!=null and endTime!=''">
+				AND
+					um.createdTime  &lt;= #{endTime}
+			</if>
+		)
+		ORDER BY createdtime DESC
+    </select>
+
+    <update id="modifyMessageInfo">
+        UPDATE
+            uc_msg_user
+        SET
+            msgStatus = #{msgStatus}
+        WHERE
+            msgId = #{msgId}
+        AND 
+        	userId = #{userId}
+    </update>
+    
+    <update id="batchModifyMessageInfo" parameterType="java.util.List">  
+        UPDATE
+            uc_msg_user
+        SET
+            msgStatus = #{msgStatus}
+        WHERE msgId IN
+        <foreach collection="msgId" item="item" index="index" open="(" separator="," close=")" >  
+         	#{item}  
+        </foreach>   
+        AND 
+        	userId = #{userId}
+    </update>
+    
+    <select id="getCountByTimeMsg" resultType="_int">
+    	select count(1) from (
+	       <include refid="getMessage"/>
+		        WHERE
+					umu.userId = #{userId}
+				<if test="startTime!=null and startTime!='' ">
+					AND
+						um.createdTime  &gt;= #{startTime}
+				 </if>
+		       	<if test="endTime!=null and endTime!=''">
+					AND
+						um.createdTime  &lt;= #{endTime}
+				</if>
+				<if test="msgStatus!=null and msgStatus!=''">
+					AND
+					     umu.msgStatus = #{msgStatus}
+				</if>
+				<if test="msgStatus==null or msgStatus==''">
+					AND
+					     umu.msgStatus != 2
+				</if>
+				AND
+					umu.msgId = um.id
+			UNION 
+			<include refid="getSysMsg"/>
+				<if test="startTime!=null and startTime!='' ">
+					AND
+						um.createdTime  &gt;= #{startTime}
+				 </if>
+		       	<if test="endTime!=null and endTime!=''">
+					AND
+						um.createdTime  &lt;= #{endTime}
+				</if>
+		) AS m
+    </select>
+    
+    <select id="getCountUnReadMsg" resultType="_int">
+    	select count(1) from (
+	       <include refid="getMessage"/>
+		        WHERE
+					umu.userId = #{userId}
+				AND
+					umu.msgStatus = 0
+				AND
+					umu.msgId = um.id
+			UNION 
+			<include refid="getSysMsg"/>
+		) AS m
+    </select>
+    
+    <select id="getCountTotalMsg" resultType="_int">
+    	select count(1) from (
+	       <include refid="getMessage"/>
+		        WHERE
+					umu.userId = #{userId}
+				AND
+					umu.msgStatus != 2
+				AND
+					umu.msgId = um.id
+			UNION 
+			<include refid="getSysMsg"/>
+		) AS m
+    </select>
+    
+    <insert id="insertMessage" useGeneratedKeys="true">  
+        INSERT INTO uc_msg_user
+        (
+          msgId,
+          userId,
+          msgStatus
+        )
+        VALUES (#{msgId},#{userId},#{msgStatus})
+   </insert>
+    
+   <insert id="batchInsertMessage" useGeneratedKeys="true" parameterType="java.util.List">  
+        INSERT INTO uc_msg_user
+        (
+          msgId,
+          userId,
+          msgStatus
+        )
+        VALUES
+        <foreach collection="msgId" item="item" index="index" separator="," >  
+        	(#{item},#{userId},#{msgStatus})
+    	</foreach> 
+   </insert>
+  
+   <insert id="pubMessage" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO uc_message
+        (
+          msgTitle,
+          msgContent,
+          createdTime,
+          lastUpdateTime,
+          msgType
+        )
+        VALUES
+        (#{msgTitle},
+         #{msgContent},
+         now(),
+         now(),
+         #{msgType}
+        )
+   </insert>
+   
+     <insert id="batchInsertRelations" useGeneratedKeys="true" parameterType="java.util.List">  
+        INSERT INTO uc_msg_user
+        (
+          msgId,
+          userId,
+          msgStatus
+        )
+        VALUES
+        <foreach collection="userId" item="item" index="index" separator="," >  
+        	(#{msgId},#{item},#{msgStatus})
+    	</foreach> 
+   </insert>
+    
+
+</mapper>
