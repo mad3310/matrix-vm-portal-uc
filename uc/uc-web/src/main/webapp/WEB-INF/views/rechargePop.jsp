@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
     <title></title>
-    <link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/usercenterRecharge.css"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/main/usercenterRecharge.css"/>
     <style type="text/css">
         html, body {
             min-width: 540px;
@@ -21,7 +21,7 @@
         }
 
         .pay-way a.active-zf {
-            border-color: #1073c2;
+            border-color: #077cae;
         }
 
         .zhifu-tankuang-info .ul-amount li label {
@@ -35,8 +35,16 @@
             border:1px solid #c00;
         }
         .modal-header .close{
-            background: none;
+			background-position:-63px -31px !important;
+			background:none !important;
+            color: #088ac2;
         }
+		
+		.modal-header-primary{
+			background-color: #fff;
+			color: #088ac2;
+			border-bottom: 1px solid #088ac2;
+		}
     </style>
 </head>
 <body>
@@ -44,8 +52,8 @@
 <div class="modal-dialog" style="width: 540px; " id="rechargeProcessModal">
     <div class="modal-content">
         <div class="modal-header modal-header-primary">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close" ><span
-                    aria-hidden="true">&times;</span></button>
+            <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close" ><span
+                    aria-hidden="true">&times;</span></button>-->
             <h4 class="modal-title" id="<editPhoneModalLabel></editPhoneModalLabel>">账户充值</h4>
         </div>
         <div class="modal-body">

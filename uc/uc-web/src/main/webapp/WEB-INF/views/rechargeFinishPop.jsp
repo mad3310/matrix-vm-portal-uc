@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
     <title></title>
-    <link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/usercenterRecharge.css"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/main/usercenterRecharge.css"/>
     <style type="text/css">
         html, body {
             min-width: 540px;
@@ -22,6 +22,11 @@
         .modal-header .close {
             background: none;
         }
+		.modal-header-primary{
+			background-color: #fff;
+			color: #088ac2;
+			border-bottom: 1px solid #088ac2;
+		}
     </style>
 </head>
 <body>

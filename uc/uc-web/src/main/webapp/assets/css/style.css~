@@ -1,0 +1,102 @@
+/*header start*/
+.header {
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #088ac2;
+}
+
+.header a:link, .header a:visited, .header a:hover, .header a:active {
+    text-decoration: none;
+    color: white;
+}
+
+.header .header-brand {
+    display: block;
+    height: 70px;
+    width: 230px;
+    background-color: #077cae;
+    padding: 15px 0 10px 20px;
+}
+
+.header .header-brand .brand-logo {
+
+}
+
+.header .header-help, .header .header-account {
+    height: 70px;
+}
+
+.header .header-help {
+    margin-right: 30px;
+}
+
+.header .header-account {
+    margin-right: 20px;
+}
+
+.header .header-help .help-icon, .header .header-account .account-icon {
+    line-height: 70px;
+}
+
+.header .header-help span, .header .header-account span {
+    line-height: 70px;
+    font-size: 14px;
+}
+/*header end*/
+.comwidth {
+	width:100% !important;
+}
+.le-user-warp{
+	margin-top:70px !important;
+	border:0px !important;
+}
+.le-user-side{
+	margin-top:69px;
+	position:fixed !important;
+    	list-style: none;
+    	color: #b4bcc8;
+	background-color:#ebebeb !important;
+	width: 230px !important;
+}
+.le-user-side a{
+    text-decoration: none;
+}
+.le-user-side .title{
+	background-color:#ebebeb !important;
+	height: 80px !important;
+	text-align:center;
+	line-height: 100px;
+	color:#098ac3;
+}
+.le-user-side .items{
+	width:210px !important;
+	margin-left:20px;
+}
+.le-user-side .items li{
+	line-height: 50px !important;
+	border-left:4px solid #ebebeb !important;
+	border-bottom:0px !important;
+	line-height:0px; !important;
+} 
+.le-user-side .items li:not(active):hover{
+	border-left:4px solid #088ac2 !important;
+	background:#E0DEDE;
+}
+.le-user-side .items li.active{
+	border-left:4px solid #088ac2 !important;
+	color:#088ac2;
+}
+.le-user-side .items li>a{
+	height:51px !important;
+	color: #58717F !important;
+	padding-left:32px !important;
+} 
+
+.modal-header-primary{
+	background-color: #fff !important;
+    	color: #58717F;
+}
+

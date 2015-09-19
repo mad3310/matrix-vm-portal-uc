@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/adminHeaderApp.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/main/adminHeaderApp.css"/>
 <link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/js/min/adminZbHomeApp.js"/>
 <header class="le-head-user">
     <div class="leyun-topbar">

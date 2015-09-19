@@ -2,28 +2,28 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
       <div class="le-user-side" id="userside">
-            <h2 class="title"><i class="icon-user-centers"></i><span>用户中心</span></h2>
+            <h4 class="title">用户中心</h4>
             <ul class="items clearfix">
-                <li class="a"><a href="${ctx}/userView/ucOverview.do"><i
+                <li><a href="${ctx}/userView/ucOverview.do"><i
                         class="icon-nav-people"></i><span>用户中心概览</span></a></li>
-                <li class="b"><a href="${ctx}/userView/accountManagerView.do"><i
+                <li><a href="${ctx}/userView/accountManagerView.do"><i
                         class="icon-nav-manage"></i><span>账号管理</span></a></li>
-                <li class="c" id="myservice">
+               <!-- <li id="myservice">
                     <a href="javascript:;" id="noServer" ><i class="icon-nav-server"></i><span>我的服务</span></a>
                     <dl class="clearfix" id="userServer">
-                       <!--  <dd><a href="#">云点播</a></dd>
+                       <dd><a href="#">云点播</a></dd>
                         <dd><a href="#">云直播</a></dd>
-                        <dd><a href="#">CDN</a></dd> -->
+                        <dd><a href="#">CDN</a></dd>
                     </dl>
                     <em class="icon-dropdown-gary"></em>
+                </li>-->
+                <li><a href="${ctx}/uc/bill/getMonthBillView.do"><i class="icon-nav-bill"></i><span>我的账单</span></a>
                 </li>
-                <li class="d"><a href="${ctx}/uc/bill/getMonthBillView.do"><i class="icon-nav-bill"></i><span>我的账单</span></a>
+                <li><a href="${ctx}/userView/userKeyView.do"><i class="icon-nav-key"></i><span>用户私钥</span></a>
                 </li>
-                <li class="e"><a href="${ctx}/userView/userKeyView.do"><i class="icon-nav-key"></i><span>用户私钥</span></a>
-                </li>
-                <li class="f"><a href="${ctx}/uc/invoice/getInvoiceSetingView.do"><i
+                <li><a href="${ctx}/uc/invoice/getInvoiceSetingView.do"><i
                         class="icon-nav-invoice"></i><span>发票设置</span></a></li>
-                <li class="g"><a href="${ctx}/messageView/msgCenterView.do"><i
+                <li><a href="${ctx}/messageView/msgCenterView.do"><i
                         class="icon-nav-message"></i><span>消息中心</span></a></li>
             </ul>
         </div>

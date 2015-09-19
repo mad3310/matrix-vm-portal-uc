@@ -3,8 +3,8 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <jsp:include page="head-b.jsp"></jsp:include>
 
-<link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/statusCueApp.css"/>
-<link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/usercenterApp.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/main/statusCueApp.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/main/usercenterApp.css"/>
 <script type="text/javascript" src="http://static.uc.letvcloud.com/js/min/statusCueApp.js?t=20150623"></script>
 <script type="text/javascript" src="http://static.uc.letvcloud.com/js/min/tx.js"></script>
 
@@ -55,7 +55,7 @@
                             <th>计费类型</th>
                             <th>账单时间</th>
                             <th>费用</th>
-                            <th style="background:#1073c2;">已结算费用</th>
+                            <th style="background:#077cae;">已结算费用</th>
                             <c:if test="${billMonthBillingVo.oweMoney > 0}">
                                 <th>欠费</th>
                             </c:if>

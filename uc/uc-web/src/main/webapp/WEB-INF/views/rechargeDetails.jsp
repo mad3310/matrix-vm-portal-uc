@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <jsp:include page="head-b.jsp"></jsp:include>
-<link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/usercenterRechargeApp.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/main/usercenterRechargeApp.css"/>
 
 <jsp:include page="header-e.jsp"></jsp:include>
 <!-- 顶部head/E-->

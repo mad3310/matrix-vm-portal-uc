@@ -2,9 +2,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <jsp:include page="head-b.jsp"></jsp:include>
-<link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/zhuceApp.css"/>
-<link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/usercenterApp.css"/>
-<%--<link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/registerApp.css"/>--%>
+<link type="text/css" rel="stylesheet" href="/assets/css/main/zhuceApp.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/main/usercenterApp.css"/>
+<%--<link type="text/css" rel="stylesheet" href="/assets/css/main/registerApp.css"/>--%>
 <style type="text/css">
   .btn-yzm.disabled {
     pointer-events: none;
@@ -55,7 +55,7 @@
 	<div class="comwidth clearfix">
 		<form id="registerForm" class="vform form-sms"
 			action="${ctx}/register/registerUser.do" method="post">
-			<div class="form-con border-bottom">
+			<div class="form-con">
 				<ul class="clearfix">
 					<li>
 						<div class="type">

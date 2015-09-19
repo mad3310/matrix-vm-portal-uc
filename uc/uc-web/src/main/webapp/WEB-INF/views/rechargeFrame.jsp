@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="renderer" content="webkit">
   <title></title>
-  <link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/usercenterRecharge.css"/>
+  <link type="text/css" rel="stylesheet" href="/assets/css/main/usercenterRecharge.css"/>
 </head>
 <!--chongzhitanceng/S-->
     <style type="text/css">
@@ -20,7 +20,7 @@
        .dbox .overlay{display:block;}
        .dbox .iframe-box{display:block;}
        .modal-header .close{
-           background-position: -63px -1px;
+           background-position: -63px -31px;
        }
        .iframe-box .close{
            position:relative;

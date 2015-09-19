@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <jsp:include page="head-b.jsp"></jsp:include>
-<link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/registerApp.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/main/registerApp.css"/>
 <jsp:include page="header-e.jsp"></jsp:include>
 <!--head/E-->
 <section class="le-user-warp clearfix">

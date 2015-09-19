@@ -3,13 +3,13 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <jsp:include page="head-b.jsp"></jsp:include>
 
-<link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/statusCueApp.css"/>
-<link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/usercenterRechargeApp.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/main/statusCueApp.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/main/usercenterRechargeApp.css"/>
 <script type="text/javascript" src="http://static.uc.letvcloud.com/js/min/statusCueApp.js?t=20150623"></script>
 
 <style>
   .month-color{
-           background-color: #1073c2;
+           background-color: #077cae;
     }
    .grey_color {
          background-color: #aeaeae !important;
@@ -999,7 +999,7 @@
         window.location.reload();
     }
 </script>
-<link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/usercenterRechargeApp.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/main/usercenterRechargeApp.css"/>
 
 </body>
 </html>

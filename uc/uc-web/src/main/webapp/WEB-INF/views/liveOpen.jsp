@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:include page="head-b.jsp"></jsp:include>
-<link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/zhiboApp.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/main/zhiboApp.css"/>
 
 <jsp:include page="header-e.jsp"></jsp:include>
 <!--head/E-->

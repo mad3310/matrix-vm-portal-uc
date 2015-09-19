@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <jsp:include page="head-b.jsp"></jsp:include>
-<link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/usercenterApp.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/main/usercenterApp.css"/>
 <style type="text/css">
     .paging {
         margin-top: -20px;
@@ -33,7 +33,7 @@
         text-align: center;
         margin-left: 10px; }
     .paging .info-paging a.active-btn-paging {
-        background: #1073c2;
+        background: #077cae;
         color: #fff; }
     .paging .info-paging a.prev-btn-paging {
         background: url(http://static.uc.letvcloud.com/images/base/icon-admin-zb.png) no-repeat 12px -70px; }

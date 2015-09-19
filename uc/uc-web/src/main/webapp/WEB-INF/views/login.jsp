@@ -133,7 +133,7 @@
         function heightlogin(){
             var height = $(window.parent.window).height();
             if(height>740){
-                var bdht2=height-140;
+                var bdht2=height;
                 $(".login-bg-ljl").css(
                         "height",bdht2+'px');
             }else{

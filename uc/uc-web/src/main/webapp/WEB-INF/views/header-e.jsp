@@ -14,31 +14,16 @@
 </head>
 <body>
 <!--head/S-->
-<link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/commonHeaderApp.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/main/commonHeaderApp.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/style.css"/>
 <!--顶部head/S-->
-<header class="le-head-uc" id="le-head-uc">
+<header class="le-head-uc header" id="le-head-uc">
     <div class="comwidth clearfix">
-        <h1 class="pull-left logo"><a href="http://www.letvcloud.com/" target="_top"><img src="http://static.uc.letvcloud.com/images/logo.png" alt="logo"></a></h1>
-        <ul class="pull-left navbar">
-            <li><a href="http://www.letvcloud.com/" target="_top">首页</a></li>
-            <li>
-                <a href="javascript:;" class="le-header-uc-link">产品<i class="drop"></i></a>
-                <div class="le-header-uc-items items-product clearfix">
-                    <ul class="item clearfix">
-                        <li><a href="http://www.letvcloud.com/vod.html" target="_top">云点播</a></li>
-                        <li><a href="http://www.letvcloud.com/live.html" target="_top">云直播</a></li>
-                        <li><a href="http://www.letvcloud.com/cdn.html" target="_top">CDN</a></li>
-                        <li><a href="http://data.letvcloud.com/introduction.html" target="_top">Data+</a></li>
-                    </ul>
-                    <i class="arrow"></i>
-                </div>
-            </li>
-            <li><a href="http://help.letvcloud.com/" target="_top">帮助与支持</a></li>
-            <li><a href="http://www.letvcloud.com/about.html" target="_top">关于</a></li>
-        </ul>
+	<a href="http://matrix.letvcloud.com:8081/home/index.html" class="header-brand pull-left">
+            <img src="/assets/img/brand-logo.png" class="brand-logo">
+        </a>
         <!--未登录-->
         <div class="pull-right user" style="display: none" id="Login_n">
-            <div class="pull-left icon-nav-tel link-white pl-20">400-055-6060</div>
             <div class="pull-left link-gray6 login">
                 <a href="${ctx}/login.do" target="_top">登录</a>
                 <a href="${ctx}/registerView/registerUserView.do" target="_top">注册</a>
@@ -46,8 +31,9 @@
         </div>
 
         <div class="pull-right user" style="display: none" id="Login_y">
-            <div class="pull-left icon-nav-tel link-white pl-20">400-055-6060</div>
             <div class="pull-left logined">
+		<a href="http://matrix.letvcloud.com:8081/profile/#/dashboard" class="le-header-uc-link" id="le-control-menus" >帮助中心</a>
+		<a href="http://matrix.letvcloud.com:8081/profile/#/dashboard" class="le-header-uc-link" id="le-control-menus" >控制台</a>
                 <a href="javascript:;"class="le-header-uc-link">
                     <!--如果用户未设置头像那么引用默认头像否则直接引用用户上传的头像-->
                     <img src="http://static.uc.letvcloud.com/images/base/icon-user-face-unlogin.png"class="user-face" id="userFace" alt="头像" />
@@ -62,7 +48,6 @@
                     </ul>
                     <i class="arrow"></i>
                 </div>
-                <a href="javascript:;" class="le-header-uc-link" id="le-control-menus" >控制台<i class="drop"></i></a>
             </div>
         </div>
 

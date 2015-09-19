@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <jsp:include page="head-b.jsp"></jsp:include>
-<link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/usercenterApp.css"/>
+<link type="text/css" rel="stylesheet" href="/assets/css/main/usercenterApp.css"/>
 <style type="text/css">
 
     .btn-yzm {
@@ -85,9 +85,8 @@
                     </div>
                     <div class="le-col-5 le-col-md-6">
                         <p class="pull-right btn-groups">
-                        <!--    <a href="javascript:void(0);" id="btnCz" class="btn btn-important btn-xxl">充值</a> -->
-
-                            <a href="${ctx}/recharge/rechargeDetailsView.do" class="btn btn-primary btn-xxl">明细</a>
+		            <a href="javascript:void(0);" id="btnCz" class="btn btn-important btn-xl">充值</a>
+                            <a href="${ctx}/recharge/rechargeDetailsView.do" class="btn btn-primary btn-xl">明细</a>
                         </p>
                     </div>
                 </div>

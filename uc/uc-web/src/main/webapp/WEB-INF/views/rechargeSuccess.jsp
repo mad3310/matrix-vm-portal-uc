@@ -16,7 +16,7 @@
     <meta name="Keywords" content="乐视云视频，免费视频空间，视频存储，免费空间，企业视频，播客，视频建站，视频营销，在线视频，开放平台"/>
     <meta name="Description" content="乐视云视频是乐视网旗下视频开放平台，专注于为客户提供视频上传、存储、转码、调取、个性化定制、统计等一站式视频解决方案"/>
     <link rel="shortcut icon" href="http://static.uc.letvcloud.com/images/favicon.ico" />
-    <link type="text/css" rel="stylesheet" href="http://static.uc.letvcloud.com/css/min/registerApp.css"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/main/registerApp.css"/>
     <style type="text/css">
         .icon-success-password.failed{background: url(http://static.uc.letvcloud.com/images/base/icon-admin-zb.png) no-repeat 0 -250px !important}
     </style>
